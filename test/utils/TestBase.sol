@@ -38,4 +38,12 @@ abstract contract TestBase {
     function assertTrue(bool condition) internal pure {
         require(condition, "bool assertion failed");
     }
+
+    /// @dev Keep in-range inputs intact, including zero and the maximum. No discarded fuzz cases.
+    function bound(uint256 value, uint256 minimum, uint256 maximum) internal pure returns (uint256) {
+        require(minimum <= maximum, "invalid bounds");
+        if (value >= minimum && value <= maximum) return value;
+        // The full uint256 range always returned above, so the range size cannot overflow here.
+        return minimum + value % (maximum - minimum + 1);
+    }
 }

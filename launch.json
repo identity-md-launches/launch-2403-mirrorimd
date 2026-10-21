@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "MirrorIMD",
+    "name": "MirrorIMD",
+    "symbol": "MIRROR",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8000,
+    "initialMarketCapWei": "4000000000000000000000",
+    "remainderTo": "0xd6302976e590b9b947da8774b7f1246164e0ce98"
+  },
+  "notes": "MirrorIMD (MIRROR) is an ERC-20 with 18 decimals. Its argument-free constructor mints all 1,000,000,000 tokens once to msg.sender, the deploying factory. There are no external mint, burn or administrative functions and no transfer fees. No application contracts are deployed. pool.initialPrice is provenance only; the opening price is derived from economics.initialMarketCapWei and the total supply."
+}
